@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'list',
-    loadChildren: () => import('./list').then(m => m.ListModule),
+    loadChildren: () => import('./list/modules/list').then(m => m.ListModule),
   },
 ];
 

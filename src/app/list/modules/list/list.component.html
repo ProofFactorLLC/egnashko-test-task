@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+  <p>Where would you like to display your campaign?</p>
+  <div formArrayName="campaignRules">
+    <div *ngFor="let ruleControl of campaignRules.controls; index as index" [formGroupName]="index">
+      <app-custom-select [options]="ruleOptions" formControlName="ruleOption"></app-custom-select>
+      <app-custom-input formControlName="urls"></app-custom-input>
+      <button (click)="removeCampaignRule(index)">remove</button>
+    </div>
+  </div>
+  <button (click)="addCampaignRule()">NEW RULE</button>
+</form>
