@@ -31,7 +31,9 @@
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["src/styles"]
+              "includePaths": [
+                "src/styles"
+              ]
             },
             "scripts": []
           },
@@ -126,6 +128,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "input-test-task"
+    }
+  },
+  "defaultProject": "input-test-task",
+  "cli": {
+    "analytics": "e02ef8fd-b721-44e3-95a6-a9239b4d48cb"
+  }
 }
