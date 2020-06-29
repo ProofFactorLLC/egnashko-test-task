@@ -28,17 +28,6 @@ input:focus, select:focus {
 
 @import 'src/styles/spacing';
 @import 'src/styles/buttons';
-
-.plus {
-  display:inline-block;
-  width:15px;
-  height:15px;
-
-  background:
-    linear-gradient($dark-grey,$dark-grey),
-    linear-gradient($dark-grey,$dark-grey);
-  background-position:center;
-  background-size: 50% 1px,1px 50%; /*thickness = 2px, length = 50% (25px)*/
-  background-repeat:no-repeat;
-}
+@import 'src/styles/text';
+@import 'src/styles/icons';
 

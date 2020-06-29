@@ -1,0 +1,23 @@
+@import "colors";
+
+@mixin font-size($sizeValue) {
+  font-size: $sizeValue + px;
+}
+
+@mixin generateFontSize($prefix) {
+  $sizes: 12, 14, 16, 18, 20, 22, 24, 26, 28;
+
+  @for $i from 1 through length($sizes) {
+    $size: nth($sizes, $i);
+
+    .#{$prefix}-#{$size} {
+      @include font-size($size);
+    }
+  }
+}
+
+@include generateFontSize(fs);
+
+.text-grey {
+  color: $dark-grey;
+}

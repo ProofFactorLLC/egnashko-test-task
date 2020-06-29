@@ -1,5 +1,5 @@
 <label>
-  <select [formControl]="control">
+  <select [formControl]="control" class="custom-input">
     <option *ngFor="let option of options" [value]="option.value">{{option.label}}</option>
   </select>
 </label>

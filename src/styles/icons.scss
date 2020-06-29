@@ -1,0 +1,39 @@
+@import "colors";
+
+.plus {
+  display:inline-block;
+  width:15px;
+  height:15px;
+
+  background:
+    linear-gradient($dark-grey,$dark-grey),
+    linear-gradient($dark-grey,$dark-grey);
+  background-position:center;
+  background-size: 50% 1px,1px 50%; /*thickness = 2px, length = 50% (25px)*/
+  background-repeat:no-repeat;
+}
+
+.cross-in-circle {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid $dark-grey;
+  cursor: pointer;
+  z-index: 2;
+  &:before, &:after {
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    content: ' ';
+    height: 10px;
+    width: 2px;
+    background-color: $dark-grey;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}

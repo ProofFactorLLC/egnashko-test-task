@@ -1,11 +1,22 @@
 <form [formGroup]="form" class="pl-4 pr-4">
   <p class="mt-4 mb-4">Where would you like to display your campaign?</p>
-  <div formArrayName="campaignRules">
-    <div *ngFor="let ruleControl of campaignRules.controls; index as index" [formGroupName]="index">
+  <div formArrayName="campaignRules" *ngIf="campaignRules.controls.length > 0">
+    <div *ngFor="let ruleControl of campaignRules.controls; index as index" [formGroupName]="index" class="rules-card p-3 mt-1" [@blockAdd]>
+      <p class="text-grey fs-14 pb-3">Type of full or partial url where you would like to display notifications.</p>
 
-      <app-custom-select [options]="ruleOptions" formControlName="ruleOption"></app-custom-select>
-      <app-custom-input formControlName="urls"></app-custom-input>
-      <button (click)="removeCampaignRule(index)">remove</button>
+      <div class="rules-wrapper">
+        <div class="rule-select pr-5">
+          <app-custom-select [options]="ruleOptions" formControlName="ruleOption"></app-custom-select>
+        </div>
+
+        <div class="rule-input">
+          <app-custom-input formControlName="urls" placeholder="Display url" errorMessage="URL is Vissing"></app-custom-input>
+        </div>
+      </div>
+
+      <div class="rule-close-btn">
+        <div class="cross-in-circle" (click)="removeCampaignRule(index)"></div>
+      </div>
     </div>
   </div>
   <button (click)="addCampaignRule()" class="btn-ghost mt-4">

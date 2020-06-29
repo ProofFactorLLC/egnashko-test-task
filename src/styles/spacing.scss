@@ -1,5 +1,5 @@
 @mixin generate($prefix, $property) {
-  $sizes: 0, .25, .5, 1, 1.5, 3;
+  $sizes: 0, .25, .5, 1, 1.5, 2, 3;
   $spacing: 1rem;
 
   @for $i from 1 through length($sizes) {
